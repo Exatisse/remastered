@@ -1,0 +1,26 @@
+{
+  "name": "remastered",
+  "version": "1.0.0",
+  "description": "remastered some sites to learn",
+  "main": "index.js",
+  "author": "@exatisse",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./src/assets/css/common.scss:./dist/assets/css/common.css --style compressed",
+    "prefix": "postcss ./dist/assets/css/common.css --use autoprefixer -d ./dist/assets/css/prefixed"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exatisse/remastered.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/Exatisse/remastered/issues"
+  },
+
+  "homepage": "https://github.com/Exatisse/remastered#readme"
+}
