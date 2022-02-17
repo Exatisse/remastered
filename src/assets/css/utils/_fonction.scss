@@ -1,0 +1,17 @@
+ // Fonction for font-size
+ @function font-sz($i){
+     @return calc($i / $init-size) * 1rem;
+ }
+ 
+ // Fonction for line-height
+ @function line-ht($i){
+     @if ($i >= 10) and ($i <= 12){
+         @return calc($i / $init-size) + 0.25rem;
+     } @else if ($i >= 14) and ($i <= 18){
+         @return calc($i / $init-size) + 0.375rem;
+     } @else if ($i >= 20) and ($i <= 42){
+         @return calc($i / $init-size) + 0.5rem;
+     } @else if ($i >= 42){
+         @return calc($i / $init-size) + 0.625rem;
+     }
+ }

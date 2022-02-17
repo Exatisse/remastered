@@ -1,0 +1,13 @@
+// Font
+@mixin fonts($family : "Open sans", $font: 16, $wt: 500, $color: $dark-color){
+    font-family: $family;
+    font-size: font-sz($font);
+    font-weight: $wt;
+    line-height: line-ht($font);
+    color: $color;
+}
+
+@mixin container {
+    max-width: calc(-160px + min(1760px, 100%));
+    margin: auto;
+}

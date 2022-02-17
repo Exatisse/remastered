@@ -1,0 +1,58 @@
+@import "../base/base";
+
+.header{
+    @include container;
+    
+    &__main{
+        display: flex;
+        height: 80px;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $dark-color;
+
+        .logo{
+            &__full{
+                fill: $light-color;
+            }
+
+            &__graph{
+                display: none;
+            }
+        }
+
+        .settings{
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+
+            &__link{
+                @include fonts($font: 14, $wt: 600, $color: $light-color);
+                text-decoration: none;
+            }
+            &__button{
+                &--lang{
+                    fill: $light-color;
+                }
+
+                &--account{
+                    width: 80px;
+                    background-color: $light-color;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 0.25rem 0.6rem;
+                    border-radius: 40px;
+
+                    svg{
+                        fill: $dark-color;
+                        stroke: $dark-color;
+                        
+                        &:nth-child(n+2){
+                            fill: $grey-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

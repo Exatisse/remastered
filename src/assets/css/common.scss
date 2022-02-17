@@ -1,7 +1,5 @@
 @import "base/base";
-
-.test{
-    font-family: "Open Sans";
-    font-style: normal;
-    font-size: 90px;
-}
+@import "vendors/vendors";
+@import "utils/utils";
+@import "layouts/layouts";
+@import "pages/pages";

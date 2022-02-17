@@ -1,5 +1,6 @@
-$primary-color: #ff385c;
-$secondary-color: #6F019C;
-$light-color: #fafafa;
-$dark-color: #222222 ;
-$linear-color: linear-gradient(90deg, $secondary-color 0%, $primary-color 100%);
+$primary-color: hsl(349, 100%, 61%);
+$secondary-color: hsl(283, 99%, 31%);
+$light-color: hsl(0, 0%, 98%);
+$dark-color: hsl(0, 0%, 1%);
+$grey-color: hsl(0, 0%, 34%);
+$linear-color: linear-gradient(90deg, $secondary-color 0%, $primary-color 160%);
