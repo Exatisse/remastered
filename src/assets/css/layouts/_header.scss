@@ -2,10 +2,12 @@
 
 .header{
     @include container;
+    position: relative;
+    margin-bottom: 100px;
     
     &__main{
         display: flex;
-        height: 80px;
+        height: 5rem;
         align-items: center;
         justify-content: space-between;
         background-color: $dark-color;
@@ -35,13 +37,13 @@
                 }
 
                 &--account{
-                    width: 80px;
+                    width: 5rem;
                     background-color: $light-color;
                     display: flex;
                     align-items: center;
-                    gap: 1rem;
-                    padding: 0.25rem 0.6rem;
-                    border-radius: 40px;
+                    gap: .9rem;
+                    padding: .3rem .3rem .3rem .8rem;
+                    border-radius: 2.5rem;
 
                     svg{
                         fill: $dark-color;
@@ -50,6 +52,66 @@
                         &:nth-child(n+2){
                             fill: $grey-color;
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    &__search{
+        position: absolute;
+        top: 112%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: auto;
+
+        .search-tab{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.875rem;
+            gap: 2.125rem;
+
+            &__elements{
+                @include fonts($font: 16, $wt: 400, $color: $light-color);
+                
+                &:first-child{
+                    &::after{
+                        content: "";
+                        display: inline-block;
+                        position: absolute;
+                        top: 1.8rem;
+                        left: 31.2%;
+                        width: 1rem;
+                        border: 0.1rem solid $light-color;
+                    }
+                }
+            }
+        }
+
+        .search-info{
+            display: flex;
+            background-color: $light-color;
+            border-radius: 2.5rem;
+
+            &__item{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 1rem 1.25rem;
+                background-color: transparent;
+
+                .title{
+                    @include fonts($font: 12, $wt: 700, $color: $dark-color);
+                }
+
+                .input{
+                    width: auto;
+                    background: transparent;
+                    border: none;
+                    @include fonts($font: 14, $wt: 400, $color: $grey-color);
+
+                    &:focus-visible{
+                        border: none;
                     }
                 }
             }

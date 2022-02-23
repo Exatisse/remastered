@@ -5,7 +5,6 @@
 
     .presentation{
         @include container;
-        padding: 100px 0; // Enlever plus tard lorsque la deuxième navigation sera mise
         position: relative;
 
         &__img{
