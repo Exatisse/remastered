@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../dist/assets/css/common.css">
 </head>
 <body style="height:4000px;">
-    <div class="container-top">
+    <div class="top">
         <div class="header">
             <header class="header__main">
                 <a href="" class="logo">
@@ -37,23 +37,35 @@
                 </div>
                 <div class="search-info">
                     <div class="search-info__item">
-                        <label class="title" for="dest">Destination</label>
-                        <input class="input" type="text" id="dest" name="dest" placeholder="Destination">
+                        <div class="search-info__item--input">
+                            <label class="title" for="dest">Destination</label>
+                            <input class="placeholder" type="text" id="dest" name="dest" placeholder="Où allez-vous ?">
+                        </div>
                     </div>
 
                     <div class="search-info__item">
-                        <label class="title">Arrivée</label>
-                        <input class="input" type="text" id="end" name="end" placeholder="Quand">
+                        <button class="search-info__item--btn">
+                            <p class="title">Arrivée</p>
+                            <span class="placeholder">Quand ?</span>
+                        </button>
                     </div>
 
                     <div class="search-info__item">
-                        <label class="title">Départ</label>
-                        <input class="input" type="text" id="start" name="start" placeholder="Quand">
+                        <button class="search-info__item--btn">
+                            <p class="title">Départ</p>
+                            <span class="placeholder">Quand ?</span>
+                        </button>
                     </div>
 
                     <div class="search-info__item">
-                        <label class="title">Voyageurs</label>
-                        <input class="input" type="text" id="traveler" name="traveler" placeholder="Voyageurs">
+                        <button class="search-info__item--btn">
+                            <p class="title">Voyageurs</p>
+                            <span class="placeholder">Qui ?</span>
+                        </button>
+                        <button class="search-info__item--bar">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 16px; width: 16px; stroke-width: 4px; overflow: visible;" aria-hidden="true" role="presentation" focusable="false"><g fill="none"><path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path></g></svg>
+                            <span class="placeholder">Rechercher</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -65,6 +77,40 @@
                 <button class="cta">
                     <span class="cta__txt">Je suis flexible</span>
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="idea">
+        <div class="idea__city">
+            <img src="/dist/assets/img/porto-vecchio.webp" alt="" class="img">
+            <div class="content-bloc">
+                <h3 class="city">Porto-Vecchio</h3>
+                <p class="kilometers">À 974 kilomètres</p>
+            </div>
+        </div>
+
+        <div class="idea__city">
+            <img src="/dist/assets/img/teste-de-buch.webp" alt="" class="img">
+            <div class="content-bloc">
+                <h3 class="city">La Teste-de-Buch</h3>
+                <p class="kilometers">À 541 kilomètres</p>
+            </div>
+        </div>
+
+        <div class="idea__city">
+            <img src="/dist/assets/img/la-rochelle.webp" alt="" class="img">
+            <div class="content-bloc">
+                <h3 class="city">La Rochelle</h3>
+                <p class="kilometers">À 399 kilomètres</p>
+            </div>
+        </div>
+
+        <div class="idea__city">
+            <img src="/dist/assets/img/gerardmer.webp" alt="" class="img">
+            <div class="content-bloc">
+                <h3 class="city">Gérardmer</h3>
+                <p class="kilometers">À 347 kilomètres</p>
             </div>
         </div>
     </div>
