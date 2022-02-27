@@ -1,0 +1,13 @@
+.gift{
+    @include grid-initializer($column: 2, $row: 5, $title-start: 1, $title-end: 3);
+
+    &__pres{
+        .title{
+            @include fonts("Poppins", 52, 500, $dark-color);
+        }
+
+        .cta{
+            @include cta($dark-color)
+        }
+    }
+}

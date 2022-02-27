@@ -25,15 +25,26 @@
         .settings{
             display: flex;
             align-items: center;
-            gap: 1.2rem;
+            position: relative;
 
-            &__link{
-                @include fonts($font: 14, $wt: 600, $color: $light-color);
-                text-decoration: none;
-            }
             &__button{
+                &--link{
+                    @include fonts($font: 14, $wt: 600, $color: $light-color);
+                    text-decoration: none;
+                }
+
                 &--lang{
                     fill: $light-color;
+                    margin-right: 0.6rem;
+                }
+
+                &--link, &--lang{
+                    padding: 0.8rem;
+
+                    &:hover{
+                        background-color: $light-color-op;
+                        border-radius: 2rem;
+                    }
                 }
 
                 &--account{
@@ -45,6 +56,7 @@
                     gap: .9rem;
                     padding: .3rem .3rem .3rem .8rem;
                     border-radius: 2.5rem;
+                    cursor: pointer;
 
                     svg{
                         fill: $dark-color;
@@ -65,6 +77,10 @@
                         position: absolute;
                         top: 3px;
                         right: 3px;
+                    }
+
+                    &:hover{
+                        box-shadow: 4px 6px 4px rgba(0,0,0, 0.1)
                     }
                 }
             }
@@ -160,7 +176,7 @@
 
                 &--btn{
                     height: 100%;
-                    padding: 1rem 5rem 1rem 1.5rem;
+                    padding: 1rem 6rem 1rem 1.5rem;
                     text-align: start;
                     position: relative;
                     border-radius: 4rem;

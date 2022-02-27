@@ -1,0 +1,29 @@
+.idea{
+    @include grid-initializer($column: 4, $row: 2, $title-start: 1, $title-end: 5);
+
+    &__cards{
+        // Generate random background color from random-colors list
+        @for $i from 1 through length($random-colors) {
+            &:nth-child(#{length($random-colors)} n+#{$i}) {
+                background-color: nth($random-colors, $i);
+            }
+        }
+
+        .img{
+            width: 100%;
+            border-radius: .8rem .8rem 0 0;
+        }
+
+        .content-bloc{
+            padding: 1.5rem 1rem 1rem;
+
+            .city{
+                @include fonts("Poppins", 35, 600, $light-color);
+            }
+
+            .kilometers{
+                @include fonts("Poppins", 20, 400, $light-color);
+            }
+        }
+    }
+}

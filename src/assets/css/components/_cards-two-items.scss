@@ -1,0 +1,23 @@
+.discovery{
+    @include grid-initializer($column: 2, $row: 5, $title-start: 1, $title-end: 3);
+
+    &__cards{
+        gap: 1rem;
+        padding: 5rem;
+
+        @for $i from 1 through length($random-img) {
+            &:nth-child(#{length($random-img)} n+#{$i}) {
+                background: nth($random-img, $i);
+            }
+        }
+
+        .title{
+            max-width: 70%;
+            @include fonts("Poppins", 52, 500, $light-color);
+        }
+
+        .cta{
+            @include cta;
+        }
+    }
+}

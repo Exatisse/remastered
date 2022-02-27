@@ -7,7 +7,54 @@
     color: $color;
 }
 
+// CTAL
+@mixin cta ($color: $light-color){
+    width: fit-content;
+    height: fit-content;
+    background-color: $color;
+    padding: 1rem 1.5rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    @include fonts("Poppins", 16, 500, $dark-color);
+
+    &:hover{
+        background-color: darken($color, 14%);
+    }
+
+    @if ($color == $dark-color) {
+        color: $light-color;
+
+        &:hover{
+            background-color: lighten($color, 3%);
+        }
+    }
+}
+
+// Containers's rules
 @mixin container {
     max-width: calc(-160px + min(1760px, 100%));
     margin: auto;
+}
+
+
+// Grid rules
+@mixin grid-initializer($column, $row, $title-start, $title-end){
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat($column, 1fr);
+    grid-gap: 1.25rem;
+    @include container;
+
+        &__title{
+            grid-column-start: $title-start;
+            grid-column-end: $title-end;
+            padding-bottom: 1.5rem;
+            @include fonts("Poppins", 42, 500, $dark-color);
+        }
+
+        &__cards{
+            display: grid;
+            grid-template-rows: repeat($row, 2fr);
+            border-radius: .8rem;
+        }
 }
