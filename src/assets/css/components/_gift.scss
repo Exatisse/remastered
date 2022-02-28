@@ -1,13 +1,26 @@
 .gift{
-    @include grid-initializer($column: 2, $row: 5, $title-start: 1, $title-end: 3);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 1.25rem;
+    @include container;
 
     &__pres{
+        grid-column: 1/3;
         .title{
+            padding-bottom: 1rem;
             @include fonts("Poppins", 52, 500, $dark-color);
         }
 
         .cta{
             @include cta($dark-color)
         }
+    }
+
+    &__img{
+        grid-column: 3/9;
+        justify-self: end;
+        width: 100%;
+        max-width: 66.875rem;
     }
 }

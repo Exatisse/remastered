@@ -1,0 +1,77 @@
+.next-gateway {
+    width: 100%;
+    @include container;
+
+    &__title{
+        padding-bottom: 0.4rem;
+        @include fonts("Poppins", 22, 500, $dark-color);
+    }
+
+    &__content{
+        .nav{
+            display: flex;
+            gap: 1rem;
+            padding: 0.4rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid $grey-light-color;
+
+            &__item{
+                border: none;
+                border-radius: 0.4rem;
+                padding: 0.5rem 0.8rem;
+                margin-left: -0.8rem;
+                @include fonts("Poppins", 14, 500, $grey-color);
+
+                // Rendre dynamique le after en fonction de la section active
+                &:first-child{
+                    span{
+                        position: relative;
+                        
+                        &:after {
+                            content: "";
+                            display: inline-block;
+                            position: absolute;
+                            top: 1.9rem;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 100%;
+                            border: .1rem solid $dark-color;
+                        }
+                    }
+                }
+
+                &:hover{
+                    background-color: $grey-light-color;
+                }
+            }
+        }
+
+        .suggestions{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            &__column{
+                display: grid;
+                grid-template-rows: repeat(3, 1fr);
+                grid-gap: 1.25rem;
+
+                .proposal{
+                    cursor: pointer;
+
+                    &__city{
+                        @include fonts("Poppins", 14, 400, $dark-color);
+                    }
+
+                    &__region{
+                        @include fonts("Poppins", 14, 400, $grey-color);
+                    }
+
+                    &.more{
+                        font-size: font-sz(14);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

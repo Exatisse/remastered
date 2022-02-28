@@ -5,6 +5,7 @@
 
     .presentation{
         @include container;
+        padding-bottom: 6.25rem;
         position: relative;
 
         &__img{
@@ -40,5 +41,27 @@
                 }
             }
         }
+    }
+}
+
+.host-talking{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: center / cover no-repeat url("../img/smiling-girl.jpg");
+    box-sizing: border-box;
+    padding: 6.25rem;
+    gap: 18rem;
+    border-radius: 1rem;
+    @include container;
+
+    &__title{
+        width: 37.9rem;
+        @include fonts("Poppins", 80, 600, $light-color);
+    }
+
+    &__cta{
+        @include cta
     }
 }
