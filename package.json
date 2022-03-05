@@ -6,20 +6,20 @@
   "author": "@exatisse",
   "license": "ISC",
   "browserslist": "last 4 versions",
-
   "scripts": {
     "sass": "sass --watch ./src/assets/css/common.scss:./dist/assets/css/common.css --style compressed",
     "prefix": "postcss ./dist/assets/css/common.css --use autoprefixer -d ./dist/assets/css/prefixed"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Exatisse/remastered.git"
   },
-
   "bugs": {
     "url": "https://github.com/Exatisse/remastered/issues"
   },
-
-  "homepage": "https://github.com/Exatisse/remastered#readme"
+  "homepage": "https://github.com/Exatisse/remastered#readme",
+  "dependencies": {
+    "postcss": "^8.4.7",
+    "sass": "^1.49.9"
+  }
 }
