@@ -5,12 +5,29 @@ background-color: $grey-light-color;
         width: 100%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
         padding: 3rem;
         @include container;
+
+        @media (max-width: $second-break) {
+            display: flex;
+            flex-direction: column;
+            padding: 1.2rem 3rem;
+        }
+        
 
         .column{    
             display: flex;
             flex-direction: column;
+
+            @media (max-width: $second-break) {
+                padding: 2rem 0;
+                border-bottom: 1px solid lighten($grey-color, 50%);
+
+                &:last-child{
+                    border-bottom: inherit;
+                }
+            }
 
             &__title{
                 margin-bottom: 1.2rem;
@@ -21,12 +38,22 @@ background-color: $grey-light-color;
                 display: grid;
                 grid-template-rows: repeat(6, 1fr);
                 row-gap: 1.4rem;
+
+                @media (max-width: $second-break) {
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: inherit;
+                    column-gap: 1rem;
+                }
             }
 
             &__item{
-                font-size: font-sz(14);
-                color: $dark-color;
+                @include fonts($font: 14, $wt: 500, $color: $dark-color);
                 text-decoration: none;
+                margin-bottom: 1.2rem;
+
+                @media (max-width: $second-break) {
+                    margin-bottom: inherit;
+                }
 
                 &:hover{
                     text-decoration: underline;
@@ -37,7 +64,7 @@ background-color: $grey-light-color;
 
     &__copyright{
         padding: 1.6rem 0;
-        border-top: 1px solid lighten($grey-color, 40%);
+        border-top: 1px solid lighten($grey-color, 50%);
         @include container;
 
         .links{

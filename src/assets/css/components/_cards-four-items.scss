@@ -19,10 +19,18 @@
 
             .city{
                 @include fonts("Poppins", 35, 600, $light-color);
+
+                @media (max-width: $first-break) {
+                    font-size: font-sz(27);
+                }
             }
 
             .kilometers{
                 @include fonts("Poppins", 20, 400, $light-color);
+                
+                @media (max-width: $first-break) {
+                    font-size: font-sz(15);
+                }
             }
         }
     }
