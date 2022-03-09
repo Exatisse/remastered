@@ -12,6 +12,7 @@
    flex-direction: column;
    gap: 6.25rem;
    background-color: $light-color;
+   z-index: 1;
  }
 
  *{
@@ -30,7 +31,6 @@
  */
 button, a{
   background-color: transparent;
-  line-height: 100% !important;
   border: inherit;
   padding: 0;
   margin: 0;

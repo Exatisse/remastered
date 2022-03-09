@@ -7,8 +7,8 @@
     color: $color;
 }
 
-// CTAL
-@mixin cta ($color: $light-color){
+// CTA
+@mixin cta-origin ($color: $light-color){
     width: fit-content;
     height: fit-content;
     background-color: $color;
@@ -34,6 +34,10 @@
 @mixin container {
     max-width: calc(-160px + min(1760px, 100%));
     margin: auto;
+
+    @media (max-width: $second-break) {
+        max-width: calc(-80px + min(1760px, 100%));
+    }
 }
 
 
@@ -50,6 +54,10 @@
             grid-column-end: $title-end;
             padding-bottom: 1.5rem;
             @include fonts("Poppins", 42, 500, $dark-color);
+
+            @media (max-width: $first-break) {
+                font-size: font-sz(32);
+            }
         }
 
         &__cards{

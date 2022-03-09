@@ -3,7 +3,7 @@
 .header{
     @include container;
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 8.75rem;
     
     &__main{
         display: flex;
@@ -14,11 +14,21 @@
 
         .logo{
             &__full{
+                display: block;
                 fill: $light-color;
+
+                @media (max-width: $second-break) {
+                    display: none;
+                }
             }
 
             &__graph{
+                fill: $light-color;
                 display: none;
+
+                @media (max-width: $second-break) {
+                    display: block;
+                }
             }
         }
 
@@ -104,6 +114,10 @@
                 @include fonts($font: 16, $wt: 400, $color: $light-color);
                 position: relative;
 
+                @media (max-width: $second-break) {
+                    @include fonts($font: 14, $wt: 400, $color: $light-color);
+                }
+
                 &:first-child{ // Devra être remplacer par le comportement en JS
                     &::after{
                         content: "";
@@ -112,8 +126,9 @@
                         top: 1.8rem;
                         left: 50%;
                         transform: translate(-50%, -50%);
-                        width: 1rem !important; // Important bidouille pour laisser l'aspect actif
-                        border: 0.1rem solid $light-color;
+                        width: 1rem !important; // !important - bidouille pour laisser l'aspect actif
+                        border-bottom: 0.16rem solid $light-color;
+                        border-radius: 2rem;
                     }
                 }
 
@@ -125,8 +140,9 @@
                         top: 1.8rem;
                         left: 50%;
                         transform: translate(-50%, -50%);
-                        width: 0.2rem;
-                        border: 0.1rem solid $light-color;
+                        width: 0.3rem;
+                        border-bottom: 0.16rem solid $light-color;
+                        border-radius: 2rem;
                     }
                 }
             }

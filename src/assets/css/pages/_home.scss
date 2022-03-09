@@ -1,35 +1,39 @@
 @import "../base/colors";
 
 .top{
-    background-color: $dark-color;
+    background: $light-color;
+    background: linear-gradient(0deg, $light-color 34%, $dark-color 34%);
 
     .presentation{
+        background: center/cover no-repeat url("../img/home-landscape.jpg");
+        aspect-ratio: 2;
+        border-radius: 2rem;
         @include container;
-        padding-bottom: 6.25rem;
-        position: relative;
-
-        &__img{
-            width: 100%;
-            height: 100%;
-            max-height: 800px;
-            border-radius: 20px;
-            filter: grayscale(50%);
-        }
 
         &__content{
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
             text-align: center;
-
+            margin: auto;
+            width: 60%;
+            height: 100%;
+            padding: 4rem;
+            
             .title{
+                white-space: pre;
                 @include fonts($font: 38, $wt: 700, $color: $light-color);
+
+                @media (max-width: $first-break) {
+                    font-size: font-sz(32);
+                }
             }
 
             .cta{
                 @include fonts("Poppins", 18, 700, $light-color);
+                width: fit-content;
                 background-color: $light-color;
+                margin: 0 auto;
                 padding: 20px 40px;
                 border-radius: 100px;
                 cursor: pointer;
@@ -37,6 +41,7 @@
                 &__txt{
                     background: $linear-color;
                     background-clip: text;
+                    -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
             }
@@ -56,12 +61,26 @@
     border-radius: 1rem;
     @include container;
 
+    @media (max-width: $first-break) {
+        max-width: inherit;
+        border-radius: inherit;
+    }
+
+    @media (max-width: $second-break) {
+        padding: 6.25rem 2.5rem;
+    }
+
     &__title{
         width: 37.9rem;
         @include fonts("Poppins", 80, 600, $light-color);
+
+        @media (max-width: $first-break) {
+            font-size: font-sz(62);
+            line-height: line-ht(62);
+        }
     }
 
     &__cta{
-        @include cta
+        @include cta-origin
     }
 }

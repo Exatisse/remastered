@@ -2,6 +2,7 @@
     @include grid-initializer($column: 2, $row: 5, $title-start: 1, $title-end: 3);
 
     &__cards{
+        aspect-ratio: 10/12;
         gap: 1rem;
         padding: 5rem;
 
@@ -11,13 +12,22 @@
             }
         }
 
+        @media (max-width: $first-break) {
+            padding: 2rem;
+        }
+
         .title{
-            max-width: 70%;
+            max-width: 27rem;
             @include fonts("Poppins", 52, 500, $light-color);
+
+            @media (max-width: $first-break) {
+                font-size: font-sz(38);
+                line-height: line-ht(38);
+            }
         }
 
         .cta{
-            @include cta;
+            @include cta-origin;
         }
     }
 }
