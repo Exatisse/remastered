@@ -4,6 +4,10 @@
     @include container;
     position: relative;
     margin-bottom: 8.75rem;
+
+    @media (max-width: $tabletSecond-break){
+        margin-bottom: 6.75rem;
+    }
     
     &__main{
         display: flex;
@@ -17,7 +21,7 @@
                 display: block;
                 fill: $light-color;
 
-                @media (max-width: $second-break) {
+                @media (max-width: $tablet-break) {
                     display: none;
                 }
             }
@@ -26,7 +30,7 @@
                 fill: $light-color;
                 display: none;
 
-                @media (max-width: $second-break) {
+                @media (max-width: $tablet-break) {
                     display: block;
                 }
             }
@@ -104,6 +108,13 @@
         transform: translate(-50%, -50%);
         margin: auto;
 
+        @media (max-width: $tabletSecond-break) {
+            position: inherit;
+            top: inherit;
+            left: inherit;
+            transform: inherit;
+        }
+
         .search-tab{
             display: flex;
             justify-content: center;
@@ -114,7 +125,7 @@
                 @include fonts($font: 16, $wt: 400, $color: $light-color);
                 position: relative;
 
-                @media (max-width: $second-break) {
+                @media (max-width: $tablet-break) {
                     @include fonts($font: 14, $wt: 400, $color: $light-color);
                 }
 
@@ -150,15 +161,22 @@
 
         .search-info{
             display: flex;
+            width: 53.125rem;
             background-color: $light-color;
             border-radius: 2.5rem;
+
+            @media (max-width: $tabletSecond-break) {
+                width: 100%;
+            }
 
             &__item{
                 width: max-content;
                 display: flex;
+                flex: auto;
                 flex-direction: column;
                 justify-content: center;
                 border-radius: 2.5rem;
+                padding: 1rem 0;
                 
                 .title{
                     cursor: pointer;
@@ -175,12 +193,13 @@
                 
                 &:last-child{
                     flex-direction: row;
+                    justify-content: space-between;
                 }
 
                 &--input{
                     display: flex;
                     flex-direction: column;
-                    padding: 1rem 5rem 1rem 2.2rem;
+                    padding-left: 1.5rem;
                     cursor: pointer;
 
                     input[type=text]{
@@ -192,7 +211,7 @@
 
                 &--btn{
                     height: 100%;
-                    padding: 1rem 6rem 1rem 1.5rem;
+                    padding-left: 1.5rem;
                     text-align: start;
                     position: relative;
                     border-radius: 4rem;
