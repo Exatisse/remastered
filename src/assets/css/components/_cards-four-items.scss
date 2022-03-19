@@ -20,7 +20,7 @@
             .city{
                 @include fonts("Poppins", 35, 600, $light-color);
 
-                @media (max-width: $first-break) {
+                @media (max-width: $desk-break) {
                     font-size: font-sz(27);
                 }
             }
@@ -28,7 +28,7 @@
             .kilometers{
                 @include fonts("Poppins", 20, 400, $light-color);
                 
-                @media (max-width: $first-break) {
+                @media (max-width: $desk-break) {
                     font-size: font-sz(15);
                 }
             }

@@ -9,7 +9,7 @@ background-color: $grey-light-color;
         padding: 3rem;
         @include container;
 
-        @media (max-width: $second-break) {
+        @media (max-width: $tablet-break) {
             display: flex;
             flex-direction: column;
             padding: 1.2rem 3rem;
@@ -20,7 +20,7 @@ background-color: $grey-light-color;
             display: flex;
             flex-direction: column;
 
-            @media (max-width: $second-break) {
+            @media (max-width: $tablet-break) {
                 padding: 2rem 0;
                 border-bottom: 1px solid lighten($grey-color, 50%);
 
@@ -39,11 +39,17 @@ background-color: $grey-light-color;
                 grid-template-rows: repeat(6, 1fr);
                 row-gap: 1.4rem;
 
-                @media (max-width: $second-break) {
+                @media (max-width: $tablet-break) {
                     grid-template-columns: repeat(3, 1fr);
                     grid-template-rows: inherit;
                     column-gap: 1rem;
                 }
+                
+                @media (max-width: $tablet-break) {
+                    grid-template-columns: 100%;
+                }
+
+                
             }
 
             &__item{
@@ -51,7 +57,7 @@ background-color: $grey-light-color;
                 text-decoration: none;
                 margin-bottom: 1.2rem;
 
-                @media (max-width: $second-break) {
+                @media (max-width: $tablet-break) {
                     margin-bottom: inherit;
                 }
 
@@ -72,17 +78,31 @@ background-color: $grey-light-color;
             align-items: center;
             gap: 1rem;
 
+            @media (max-width: $tabletSecond-break) {
+                align-items: start;
+                flex-direction: column;
+            }
+            
             span{
                 @include fonts($font: 14, $wt: 400, $color: $dark-color);
             }
+            
+            &__group{
+                display: flex;
+                gap: 1rem;
 
-            a{
-                font-size: font-sz(14);
-                color: $dark-color;
-                text-decoration: none;
+                @media (max-width: $tabletSecond-break) {
+                    flex-wrap: wrap;
+                }
 
-                &:hover{
-                    text-decoration: underline;
+                a{
+                    font-size: font-sz(14);
+                    color: $dark-color;
+                    text-decoration: none;
+    
+                    &:hover{
+                        text-decoration: underline;
+                    }
                 }
             }
         }

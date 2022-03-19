@@ -24,7 +24,7 @@
                 white-space: pre;
                 @include fonts($font: 38, $wt: 700, $color: $light-color);
 
-                @media (max-width: $first-break) {
+                @media (max-width: $desk-break) {
                     font-size: font-sz(32);
                 }
             }
@@ -61,12 +61,12 @@
     border-radius: 1rem;
     @include container;
 
-    @media (max-width: $first-break) {
+    @media (max-width: $desk-break) {
         max-width: inherit;
         border-radius: inherit;
     }
 
-    @media (max-width: $second-break) {
+    @media (max-width: $tablet-break) {
         padding: 6.25rem 2.5rem;
     }
 
@@ -74,7 +74,7 @@
         width: 37.9rem;
         @include fonts("Poppins", 80, 600, $light-color);
 
-        @media (max-width: $first-break) {
+        @media (max-width: $desk-break) {
             font-size: font-sz(62);
             line-height: line-ht(62);
         }

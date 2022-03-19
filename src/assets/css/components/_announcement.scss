@@ -10,12 +10,16 @@
     @include container;
     margin-bottom: 6.25rem;
 
+    @media (max-width: $tabletSecond-break) {
+        padding: 4rem 0;
+    }
+
     &__title{
         padding: 0 6.25rem;
         text-align: center;
         @include fonts($font: 44, $wt: 700, $color: $light-color);
 
-        @media (max-width: $first-break) {
+        @media (max-width: $desk-break) {
             font-size: font-sz(32);
         }
     }

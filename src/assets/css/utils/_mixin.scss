@@ -35,7 +35,7 @@
     max-width: calc(-160px + min(1760px, 100%));
     margin: auto;
 
-    @media (max-width: $second-break) {
+    @media (max-width: $tablet-break) {
         max-width: calc(-80px + min(1760px, 100%));
     }
 }
@@ -55,7 +55,7 @@
             padding-bottom: 1.5rem;
             @include fonts("Poppins", 42, 500, $dark-color);
 
-            @media (max-width: $first-break) {
+            @media (max-width: $desk-break) {
                 font-size: font-sz(32);
             }
         }
