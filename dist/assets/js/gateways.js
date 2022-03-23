@@ -1,4 +1,4 @@
-﻿const test = {
+﻿const gatewaysDatas = {
     "seaSide": [
         {
             "city": "Agadir",
@@ -187,4 +187,3 @@
         }
     ]
 };
-console.log(test);
