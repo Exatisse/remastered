@@ -8,7 +8,7 @@
     }
 
     &__content{
-        .nav{
+        .gateway-nav{
             display: flex;
             gap: 1rem;
             padding: 0.4rem 0;
@@ -21,8 +21,7 @@
                 margin-left: -0.8rem;
                 @include fonts("Poppins", 14, 500, $grey-color);
 
-                // Rendre dynamique le after en fonction de la section active
-                &:first-child{
+                &.active{
                     span{
                         position: relative;
                         
@@ -46,7 +45,7 @@
             }
         }
 
-        .suggestions{
+        .gateway-suggestions{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
 
