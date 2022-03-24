@@ -35,7 +35,7 @@ let testChange = (dataIndex) =>{
 
 
 
-FIRST TRY
+SCRIPT FIRST VERSION
 ---------------------------------------------------------------------------
 findGatewayNavigation.addEventListener('click', () =>{
     const findButton = document.querySelectorAll('.gateway-nav__item');
@@ -75,9 +75,11 @@ findGatewayNavigation.addEventListener('click', () =>{
         })
     }
 });
-*/
+ 
+SCRIPT SECOND VERSION
+---------------------------------------------------------------------------
 
-// Find gateway navigation item for eventListener
+Find gateway navigation item for eventListener
 const findButton = document.querySelectorAll('.gateway-nav__item');
 
 // Function use to find and change all link's data in gateway propositions
@@ -128,3 +130,45 @@ for (let i = 0; i < findButton.length; i++) {
         }
     })
 };
+*/
+
+
+// Find gateway navigation item for eventListener
+const findButton = document.querySelectorAll('.gateway-nav__item');
+
+// Function use to find and change all link's data in gateway propositions
+const changeAllDestination = (section) => {
+    const keepDestinations = document.querySelectorAll('.gateway-suggestions .destination');
+
+    for (let i = 0; i < keepDestinations.length; i++) {
+        let findDestinations = document.querySelector('.gateway-suggestions').children[i].children;
+        let getGatewayDatas = gatewaysDatas[section][i];
+
+        findDestinations[0].textContent = getGatewayDatas.city;
+        findDestinations[1].textContent = getGatewayDatas.region;
+    }
+};
+findButton.forEach(element => {
+    element.addEventListener('click', (e) => {
+        //console.log(e.currentTarget);
+        let findButtonName = e.currentTarget.attributes.name.value;
+
+        document.querySelector('.gateway-nav .active').classList.remove('active');
+        e.currentTarget.classList.add('active')
+
+        changeAllDestination(findButtonName);
+    })
+});
+// Loop to find which gateway navigation item is clicked and change all destination (function just on top)
+/*
+for (let i = 0; i < findButton.length; i++) {
+    findButton[i].addEventListener('click', () => {
+        let findButtonName = findButton[i].attributes.name.value;
+
+        document.querySelector('.gateway-nav .active').classList.remove('active');
+        findButton[i].classList.add('active')
+
+        changeAllDestination(findButtonName);
+    })
+};
+*/

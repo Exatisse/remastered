@@ -1,4 +1,105 @@
-﻿const gatewaysDatas = {
+﻿const gatewaysData = [
+    {
+        id:'seaSide',
+        datas:  [
+            {
+                "city": "Agadir",
+                "region": "Souss-Massa"
+            },
+            {
+                "city": "Alicante",
+                "region": "Communauté valecienne"
+            },
+            {
+                "city": "Antibes",
+                "region": "Provence-Alpes-Côte d'Azur"
+            },
+            {
+                "city": "Agde",
+                "region": "Occitanie"
+            },
+            {
+                "city": "Ancelle",
+                "region": "Provence-Alpes-Côte d'Azur"
+            },
+            {
+                "city": "Arcachon",
+                "region": "Nouvelle-Aquitaine"
+            },
+            {
+                "city": "Ajaccio",
+                "region": "Corse"
+            },
+            {
+                "city": "Andernos-les-Bains",
+                "region": "Nouvelle-Aquitaine"
+            },
+            {
+                "city": "Argelès-sur-Mer",
+                "region": "Occitanie"
+            },
+            {
+                "city": "Albufeira",
+                "region": "District de Faro"
+            },
+            {
+                "city": "Anglet",
+                "region": "Nouvelle-Aquitaine"
+            }
+        ]    
+    },
+    {
+        id:'winterSport',
+        datas:  [
+            {
+                "city": "L'Alpe d'Huez",
+                "region": "Auvergne-Rhône-Alpes"
+            },
+            {
+                "city": "Bagnère-de-Luchon",
+                "region": "Occitanie"
+            },
+            {
+                "city": "Cauterets",
+                "region": "Occitanie"
+            },
+            {
+                "city": "Annecy",
+                "region": "Auvergne-Rhône-Alpes"
+            },
+            {
+                "city": "Barèges",
+                "region": "Occitanie"
+            },
+            {
+                "city": "Chamroussse",
+                "region": "Auvergne-Rhône-Alpes"
+            },
+            {
+                "city": "Aussois",
+                "region": "Auvergne-Rhône-Alpes"
+            },
+            {
+                "city": "Bonneval-sur-Arc",
+                "region": "Auvergne-Rhône-Alpes"
+            },
+            {
+                "city": "Crest-Voland",
+                "region": "Auvergne-Rhône-Alpes"
+            },
+            {
+                "city": "Ax-les-Thermes",
+                "region": "Occitanie"
+            },
+            {
+                "city": "Brides-les-Bains",
+                "region": "Auvergne-Rhône-Alpes"
+            }
+        ],
+    },
+    
+]
+const gatewaysDatas = [{
     "seaSide": [
         {
             "city": "Agadir",
