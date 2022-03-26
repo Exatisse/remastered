@@ -23,13 +23,14 @@
 
                 &.active{
                     span{
+                        color: $dark-color;
                         position: relative;
                         
                         &:after {
                             content: "";
                             display: inline-block;
                             position: absolute;
-                            top: 1.9rem;
+                            top: 2.04rem;
                             left: 50%;
                             transform: translate(-50%, -50%);
                             width: 100%;
@@ -71,6 +72,7 @@
 
                 &.more{
                     font-size: font-sz(14);
+                    font-weight: 600;
                     text-decoration: underline;
                 }
             }

@@ -15,6 +15,7 @@
         align-items: center;
         justify-content: space-between;
         background-color: $dark-color;
+        position: relative;
 
         .logo{
             &__full{
@@ -34,6 +35,44 @@
                     display: block;
                 }
             }
+        }
+
+        .button{
+            display: none;
+            align-items: center;
+            position: absolute;
+            top: 2.5rem;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            gap: 2.6rem;
+            padding: .48rem  .48rem  .48rem  1.44rem;
+            border: 1px solid darken($grey-light-color, 10%);
+            box-shadow: $box-shadow;
+            border-radius: 2rem;
+            cursor: pointer;
+
+            &__label{
+                @include fonts($font: 14, $wt: 600, $color: $dark-color);
+            }
+    
+            &__icon{
+                height: fit-content;
+                background-color: #ff385d;
+                padding: 0.6rem;
+                border-radius: 2rem;
+    
+                .icon{
+                    stroke: $light-color;
+                }
+            }
+
+            &:hover{
+                box-shadow: $hover-shadow;
+            }
+        }
+
+        .button-mobile{
+            display: none;
         }
 
         .settings{
@@ -68,7 +107,7 @@
                     background-color: $light-color;
                     align-items: center;
                     gap: .9rem;
-                    padding: .3rem .3rem .3rem .8rem;
+                    padding: .4rem .4rem .4rem .8rem;
                     border-radius: 2.5rem;
                     cursor: pointer;
 
@@ -94,7 +133,7 @@
                     }
 
                     &:hover{
-                        box-shadow: 4px 6px 4px rgba(0,0,0, 0.1)
+                        box-shadow: $hover-shadow;
                     }
                 }
             }
@@ -176,7 +215,7 @@
                 flex-direction: column;
                 justify-content: center;
                 border-radius: 2.5rem;
-                padding: 1rem 0;
+                padding: .6rem 0;
                 
                 .title{
                     cursor: pointer;
@@ -206,6 +245,7 @@
                         border: none;
                         background-color: transparent;
                         cursor: pointer;
+                        outline: none;
                     }
                 }
 
@@ -249,6 +289,118 @@
                         display: none;
                     }
                 }
+            }
+        }
+    }
+
+    &.scroll-bar{
+        max-width: 100%;
+        z-index: 10;
+        position: sticky;
+        top: 0;
+        box-shadow: $box-shadow;
+        background-color: $light-color;
+
+        .header__main{
+            @include container;
+            background-color: inherit;
+            
+            @media (max-width: $tabletSecond-break) {
+                gap: 1rem;
+                justify-content: start;
+            }
+
+            .logo{
+                &__full{
+                    height: 32px;
+                    fill: $primary-color;
+                }
+
+                &__graph{
+                    fill: $primary-color;
+                }
+            }
+
+            .button{
+                display: flex;            
+                
+                @media (max-width: $tabletSecond-break) {
+                    min-width: max-content;
+                    position: inherit;
+                    top: inherit;
+                    left: inherit;
+                    transform: inherit;
+                }
+            }
+
+            .settings{
+                &__button{
+                    &--link{
+                        color: $dark-color;
+                    }
+    
+                    &--lang{
+                        fill: $dark-color;
+                    }
+    
+                    &--account{
+                        border: 1px solid darken($grey-light-color, 10%);
+                    }
+                }
+
+                @media (max-width: $tabletSecond-break) {
+                    width: 100%;
+                    justify-content: end;
+                }
+            }
+        }
+
+        .header__search{
+            display: none;
+        }
+    }
+
+    @media (max-width: $mobile-break) {
+        &.mobile{
+            display: block;
+            padding: 1rem 0;
+            margin-bottom: 0;
+
+            .header__main{
+                height: inherit;
+
+                .button-mobile{
+                    display: flex;
+                    gap: .5rem;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0.86rem;
+                    border-radius: 2rem;
+                    background-color: $light-color;
+
+                    &__icon{
+                        stroke: $primary-color;
+                    }
+
+                    &__label{
+                        @include fonts($font: 14, $wt: 600, $color: $dark-color);
+                    }
+                }
+            }
+
+            &.scroll-bar{
+                .button{
+                    display: none;
+                }                
+                
+                .button-mobile{
+                    background-color: $grey-light-color;
+                }
+            }
+
+            .header__search, .header__main .logo, .header__main .settings{
+                display: none;
             }
         }
     }
