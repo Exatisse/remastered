@@ -19,3 +19,7 @@ $light-color-op: rgba(250, 250, 250, 0.2);
 $dark-color: hsl(0, 0%, 1%);
 $grey-color: hsl(0, 0%, 34%);
 $grey-light-color: hsl(0, 0%, 97%);
+
+// Shadow settings
+$box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 2px, rgba(0, 0, 0, 0.05) 0px 4px 12px;
+$hover-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px, rgba(0, 0, 0, 0.08) 0px 4px 12px;
