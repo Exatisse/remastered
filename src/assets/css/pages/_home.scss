@@ -19,6 +19,18 @@
             width: 60%;
             height: 100%;
             padding: 4rem;
+
+            @media (max-width: $tablet-break) {
+                width: 80%;
+
+                @media (max-width: $mobile-break) {
+                    padding: 2rem;
+
+                    @media (max-width: $mobileSecond-break) {
+                        height: inherit;
+                    }
+                }
+            }
             
             .title{
                 white-space: pre;
@@ -26,6 +38,14 @@
 
                 @media (max-width: $desk-break) {
                     font-size: font-sz(32);
+
+                    @media (max-width: $tablet-break) {
+                        white-space: inherit;
+
+                        @media (max-width: $mobile-break) {
+                            @include fonts($font: 24, $wt: 700, $color: $light-color);
+                        }
+                    }
                 }
             }
 
@@ -77,6 +97,15 @@
         @media (max-width: $desk-break) {
             font-size: font-sz(62);
             line-height: line-ht(62);
+
+            @media (max-width: $mobile-break) {
+                width: 100%;
+
+                @media (max-width: $mobileSecond-break) {
+                    word-wrap: pre;
+                    @include fonts($font: 38, $wt: 700, $color: $light-color);
+                }
+            }
         }
     }
 
