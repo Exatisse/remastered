@@ -41,10 +41,15 @@
             justify-self: inherit;
             overflow: hidden;
             max-width: 58.8rem;
-        }
 
-        @media (max-width: $mobile-break) {
-            grid-column: inherit;
+            @media (max-width: $mobile-break) {
+                grid-column: inherit;
+                max-width: 56rem;
+
+                @media (max-width: $mobileSecond-break) {
+                    max-width: 40rem;
+                }
+            }
         }
     }
 }

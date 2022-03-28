@@ -26,6 +26,11 @@
 
         @media (max-width: $desk-break) {
             padding: 2rem;
+            
+            @media (max-width: $mobileSecond-break){
+                grid-template-rows: repeat(2, 0fr);
+                padding: 1rem;
+            }
         }
 
         .title{
@@ -33,8 +38,11 @@
             @include fonts("Poppins", 52, 500, $light-color);
 
             @media (max-width: $desk-break) {
-                font-size: font-sz(38);
-                line-height: line-ht(38);
+                @include fonts("Poppins", 38, 500, $light-color);
+
+                @media (max-width: $mobileSecond-break){
+                    @include fonts("Poppins", 24, 600, $light-color);
+                }
             }
         }
 

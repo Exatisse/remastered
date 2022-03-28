@@ -24,11 +24,8 @@
                 width: 80%;
 
                 @media (max-width: $mobile-break) {
+                    min-height: 23.75rem;
                     padding: 2rem;
-
-                    @media (max-width: $mobileSecond-break) {
-                        height: inherit;
-                    }
                 }
             }
             
@@ -54,9 +51,13 @@
                 width: fit-content;
                 background-color: $light-color;
                 margin: 0 auto;
-                padding: 20px 40px;
+                padding: 1.25rem 2.5rem;
                 border-radius: 100px;
                 cursor: pointer;
+
+                @media (max-width: $mobileSecond-break) {
+                    padding: 1rem 2rem;
+                }
 
                 &__txt{
                     background: $linear-color;
@@ -84,10 +85,14 @@
     @media (max-width: $desk-break) {
         max-width: inherit;
         border-radius: inherit;
-    }
 
-    @media (max-width: $tablet-break) {
-        padding: 6.25rem 2.5rem;
+        @media (max-width: $tablet-break) {
+            padding: 6.25rem 2.5rem;
+
+            @media (max-width: $mobile-break) {
+                padding: 2rem 1.6rem;
+            }
+        }
     }
 
     &__title{
@@ -95,15 +100,14 @@
         @include fonts("Poppins", 80, 600, $light-color);
 
         @media (max-width: $desk-break) {
-            font-size: font-sz(62);
-            line-height: line-ht(62);
+            @include fonts("Poppins", 62, 600, $light-color);
 
             @media (max-width: $mobile-break) {
                 width: 100%;
 
                 @media (max-width: $mobileSecond-break) {
                     word-wrap: pre;
-                    @include fonts($font: 38, $wt: 700, $color: $light-color);
+                    @include fonts($font: 32, $wt: 700, $color: $light-color);
                 }
             }
         }

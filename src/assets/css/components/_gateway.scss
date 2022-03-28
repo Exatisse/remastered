@@ -8,11 +8,57 @@
     }
 
     &__content{
+        position: relative;
+
         .gateway-nav{
             display: flex;
+            min-width: 620px;
             gap: 1rem;
             padding: 0.4rem 0;
             border-bottom: 1px solid $grey-light-color;
+
+            @media (max-width: $mobileSecond-break) {
+                &:before, &:after{
+                    content: "";
+                    position: absolute;
+                    z-index: 1;
+                    right: -25px;
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    background: linear-gradient(90deg, transparent, rgb(255, 255, 255) 40%);
+                }
+
+                &:before{
+                    display: none; // Rendre dynamique son apparition avec le slider
+                    left: -25px;
+                    background: linear-gradient(270deg, transparent, rgb(255, 255, 255) 40%);
+                }
+            }
+
+            &__slider{
+                display: none;
+
+                @media (max-width: $mobileSecond-break) {
+                    display: block;
+                    position: absolute;
+                    width: 16px;
+                    height: 16px; 
+                    top: 17px;
+                    z-index: 2;
+                    stroke: $dark-color;
+
+                    &:first-child{
+                        display: none; // Rendre dynamique son apparition avec le slider
+                        transform: rotate(180deg);
+                        left: -18px;
+                    }
+
+                    &:last-child{
+                        right: -18px;
+                    }
+                }
+            }
 
             &__item{
                 border: none;
@@ -52,10 +98,14 @@
 
             @media (max-width: $tablet-break) {
                 grid-template-columns: repeat(3, 1fr);
-            }
 
-            @media (max-width: $mobile-break) {
-                grid-template-columns: repeat(2, 1fr);
+                @media (max-width: $mobile-break) {
+                    grid-template-columns: repeat(2, 1fr);
+
+                    @media (max-width: $mobileThird-break) {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                }
             }
 
             &__link{
