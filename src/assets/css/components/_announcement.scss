@@ -1,4 +1,5 @@
 .announcement{
+    @include container;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,21 +7,41 @@
     gap: 2rem;
     background-color: $primary-color;
     padding: 10rem 0;
-    border-radius: 0.8rem;
-    @include container;
     margin-bottom: 6.25rem;
+    border-radius: 0.8rem;
+    text-align: center;
 
     @media (max-width: $tabletSecond-break) {
-        padding: 4rem 0;
+        padding: 10% 0;
+        gap: 2rem;
+
+        @media (max-width: $mobile-break) {
+            margin-bottom: 3rem;
+        }
     }
+
 
     &__title{
         padding: 0 6.25rem;
-        text-align: center;
         @include fonts($font: 44, $wt: 700, $color: $light-color);
 
         @media (max-width: $desk-break) {
-            font-size: font-sz(32);
+            @include fonts($font: 32, $wt: 700, $color: $light-color);
+
+            @media (max-width: $mobile-break) {
+                padding: 0 4%;
+                @include fonts($font: 24, $wt: 700, $color: $light-color);
+            }
+        }
+        
+    }
+
+    &__disclaimer{
+        @include fonts($font: 16, $wt: 400, $color: $light-color);
+        padding: 0 6.25rem;
+
+        @media (max-width: $tabletSecond-break) {
+            padding: 0 10%;
         }
     }
 
@@ -28,6 +49,7 @@
         padding: 0.7rem 1rem;
         border: 1px solid $light-color;
         border-radius: 0.4rem;
+        cursor: pointer;
         @include fonts($font: 14, $wt: 500, $color: $light-color);
     }
 }

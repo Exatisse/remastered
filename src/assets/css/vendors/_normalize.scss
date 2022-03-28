@@ -23,6 +23,7 @@
  :root{
    font-family: "Open sans";
    font-size: calc($init-size * 1px);
+   scrollbar-width: thin;
  }
 
 
@@ -54,6 +55,7 @@ button, a{
  */
 
 body {
+  background-color: $dark-color;
   margin: 0;
 }
 
