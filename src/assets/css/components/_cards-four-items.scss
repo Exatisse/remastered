@@ -1,5 +1,40 @@
 .idea{
     @include grid-initializer($column: 4, $row: 2, $title-start: 1, $title-end: 5);
+    
+    
+    @media (max-width: $tablet-break){
+         position: relative;
+         grid-template-columns: repeat(4, 37%);
+
+         @media (max-width: $tabletSecond-break){
+                grid-template-columns: repeat(4, 56%);
+         }
+     }
+
+    &__title{
+
+        @media (max-width: $mobile-break){
+            max-width: 36%;
+
+            @media (max-width: $mobileSecond-break){
+                max-width: 30%;
+            }
+     }
+        .slider-nav{
+            display: none;
+
+            @media (max-width: $tablet-break){
+                position: absolute;
+                right: 0;
+                display: flex;
+                gap: 0.6rem;
+                align-items: center;
+    
+                @include slider-item();
+            }
+        }
+
+    }
 
     &__cards{
         // Generate random background color from random-colors list
@@ -21,7 +56,11 @@
                 @include fonts("Poppins", 35, 600, $light-color);
 
                 @media (max-width: $desk-break) {
-                    font-size: font-sz(27);
+                    @include fonts("Poppins", 27, 600, $light-color);
+
+                    @media (max-width: $mobileSecond-break){
+                        @include fonts("Poppins", 18, 600, $light-color);
+                    }
                 }
             }
 
@@ -29,7 +68,11 @@
                 @include fonts("Poppins", 20, 400, $light-color);
                 
                 @media (max-width: $desk-break) {
-                    font-size: font-sz(15);
+                    @include fonts("Poppins", 15, 600, $light-color);
+
+                    @media (max-width: $mobileSecond-break){
+                        @include fonts("Poppins", 14, 600, $light-color);
+                    }
                 }
             }
         }

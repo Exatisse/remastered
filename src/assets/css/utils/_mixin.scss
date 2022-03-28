@@ -44,6 +44,40 @@
     }
 }
 
+// Slider navigation rules
+@mixin slider-svg($direction){
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    stroke: $dark-color;
+
+    @if ($direction == "left") {
+        transform: translate(-50%, -50%) rotate(180deg);
+    } @else if ($direction == "right"){
+        transform: translate(-50%, -50%);
+    } @else{
+        @error "slider-picto() : $direction value is not a valid direction";
+    }
+}
+
+@mixin slider-item(){
+    &__item{
+        width: 32px;
+        height: 32px;
+        position: relative;
+        border: 1px solid $dark-color;
+        border-radius: 100%;
+        cursor: pointer;
+    
+        &--left{
+            @include slider-svg($direction: left);
+        }
+    
+        &--right{
+            @include slider-svg($direction: right);
+        }
+    }
+}
 
 // Grid rules
 @mixin grid-initializer($column, $row, $title-start, $title-end){
@@ -54,13 +88,24 @@
     @include container;
 
         &__title{
+            display: flex;
+            justify-content: space-between;
             grid-column-start: $title-start;
             grid-column-end: $title-end;
-            padding-bottom: 1.5rem;
-            @include fonts("Poppins", 42, 500, $dark-color);
 
-            @media (max-width: $desk-break) {
-                font-size: font-sz(32);
+            .title{
+                padding-bottom: 1.5rem;
+                @include fonts("Poppins", 42, 500, $dark-color);
+    
+                @media (max-width: $desk-break) {
+                    @include fonts("Poppins", 32, 500, $dark-color);
+                    padding-bottom: 0.4rem;
+    
+                    @media (max-width: $tabletSecond-break) {
+                        @include fonts("Poppins", 24, 500, $dark-color);
+                        padding-bottom: inherit;
+                    }
+                }
             }
         }
 
