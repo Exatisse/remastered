@@ -159,11 +159,15 @@ buttonsGateway.forEach(button => {
 // Sticky nav bar on scroll
 window.onscroll = function() {
     const findHeader = document.querySelector('.header');
+    const findBottomNav = document.querySelector('.bottom-nav');
 
     if (this.oldScroll < this.scrollY) {
         findHeader.classList.add('scroll-bar');
+        findBottomNav.classList.remove('scroll');
     } else if(this.oldScroll < 160) {
         findHeader.classList.remove('scroll-bar');
+    } else if (this.oldScroll > this.scrollY){
+        findBottomNav.classList.add('scroll');
     }
 
     this.oldScroll = this.scrollY;

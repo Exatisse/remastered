@@ -3,10 +3,13 @@
 
     &__cards-block{
         width: 100%;
-        padding-left: 80px;
+        max-width: calc(-160px + min(1760px, 100%));
+        margin: auto;
         overflow: hidden;
 
         @media (max-width: $tablet-break) {
+            max-width: inherit;
+            margin: inherit;
             padding-left: 40px;
             grid-template-columns: repeat(4, 37%);
             
