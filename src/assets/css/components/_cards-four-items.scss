@@ -5,17 +5,19 @@
         width: 100%;
         max-width: calc(-160px + min(1760px, 100%));
         margin: auto;
-        overflow: hidden;
+        scrollbar-width: none;
+        overflow: scroll;
 
         @media (max-width: $tablet-break) {
             max-width: inherit;
             margin: inherit;
-            padding-left: 40px;
-            grid-template-columns: repeat(4, 37%);
+            padding: 0 40px;
+            padding-right: 840px;
+            grid-template-columns: 37% 37% 37% 37% 60px;
             
             @media (max-width: $mobile-break) {
                 padding-left: 20px;
-                grid-template-columns: repeat(4, 56%);
+                grid-template-columns: 56% 56% 56% 56% 60px;
             }
         }
     }

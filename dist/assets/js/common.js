@@ -171,4 +171,26 @@ window.onscroll = function() {
     }
 
     this.oldScroll = this.scrollY;
-  }
+}
+
+const ideaSliderNav = document.querySelector(".idea .slider-nav");
+
+ideaSliderNav.addEventListener('click', (e) => {
+    const scrollDirection = e.target.attributes.name.value;
+    const scrollableBlock = document.querySelector(".idea .idea__cards-block");
+
+    if (scrollDirection === "scrollLeft") {
+        scrollableBlock.scrollLeft -= 300;
+    } else if (scrollDirection === "scrollRight") {
+        scrollableBlock.scrollLeft += 300;
+    }
+})
+
+
+// ideaButtonleft.addEventListener('click', () => {
+//     test.scrollLeft -= 300;
+// });
+
+// ideaButtonright.addEventListener('click', () => {
+//     test.scrollLeft += 300;
+// });
