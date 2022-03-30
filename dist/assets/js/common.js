@@ -159,12 +159,38 @@ buttonsGateway.forEach(button => {
 // Sticky nav bar on scroll
 window.onscroll = function() {
     const findHeader = document.querySelector('.header');
+    const findBottomNav = document.querySelector('.bottom-nav');
 
     if (this.oldScroll < this.scrollY) {
         findHeader.classList.add('scroll-bar');
+        findBottomNav.classList.remove('scroll');
     } else if(this.oldScroll < 160) {
         findHeader.classList.remove('scroll-bar');
+    } else if (this.oldScroll > this.scrollY){
+        findBottomNav.classList.add('scroll');
     }
 
     this.oldScroll = this.scrollY;
-  }
+}
+
+const ideaSliderNav = document.querySelector(".idea .slider-nav");
+
+ideaSliderNav.addEventListener('click', (e) => {
+    const scrollDirection = e.target.attributes.name.value;
+    const scrollableBlock = document.querySelector(".idea .idea__cards-block");
+
+    if (scrollDirection === "scrollLeft") {
+        scrollableBlock.scrollLeft -= 300;
+    } else if (scrollDirection === "scrollRight") {
+        scrollableBlock.scrollLeft += 300;
+    }
+})
+
+
+// ideaButtonleft.addEventListener('click', () => {
+//     test.scrollLeft -= 300;
+// });
+
+// ideaButtonright.addEventListener('click', () => {
+//     test.scrollLeft += 300;
+// });

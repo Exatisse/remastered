@@ -1,42 +1,52 @@
-.idea{
-    @include grid-initializer($column: 4, $row: 2, $title-start: 1, $title-end: 5);
-    
-    
-    @media (max-width: $tablet-break){
-         position: relative;
-         grid-template-columns: repeat(4, 37%);
+.idea {
+    @include grid-initializer($column: 4, $row: 2);
 
-         @media (max-width: $tabletSecond-break){
-                grid-template-columns: repeat(4, 56%);
-         }
-     }
+    &__cards-block{
+        width: 100%;
+        max-width: calc(-160px + min(1760px, 100%));
+        margin: auto;
+        scrollbar-width: none;
+        overflow: scroll;
 
-    &__title{
-
-        @media (max-width: $mobile-break){
-            max-width: 36%;
-
-            @media (max-width: $mobileSecond-break){
-                max-width: 30%;
+        @media (max-width: $tablet-break) {
+            max-width: inherit;
+            margin: inherit;
+            padding: 0 40px;
+            padding-right: 840px;
+            grid-template-columns: 37% 37% 37% 37% 60px;
+            
+            @media (max-width: $mobile-break) {
+                padding-left: 20px;
+                grid-template-columns: 56% 56% 56% 56% 60px;
             }
-     }
-        .slider-nav{
+        }
+    }
+
+    &__title {
+        @include container;
+        
+        .title{
+            @media (max-width: $mobile-break) {
+                width: 74%;
+            }
+        }
+
+        .slider-nav {
             display: none;
 
-            @media (max-width: $tablet-break){
+            @media (max-width: $tablet-break) {
                 position: absolute;
                 right: 0;
                 display: flex;
                 gap: 0.6rem;
                 align-items: center;
-    
+
                 @include slider-item();
             }
         }
-
     }
 
-    &__cards{
+    &__cards {
         // Generate random background color from random-colors list
         @for $i from 1 through length($random-colors) {
             &:nth-child(#{length($random-colors)} n+#{$i}) {
@@ -44,33 +54,37 @@
             }
         }
 
-        .img{
+        .img {
             width: 100%;
             border-radius: .8rem .8rem 0 0;
         }
 
-        .content-bloc{
+        .content-bloc {
             padding: 1.5rem 1rem 1rem;
 
-            .city{
+            @media (max-width: $mobileSecond-break) {
+                padding: 0.6rem;
+            }
+
+            .city {
                 @include fonts("Poppins", 35, 600, $light-color);
 
                 @media (max-width: $desk-break) {
                     @include fonts("Poppins", 27, 600, $light-color);
 
-                    @media (max-width: $mobileSecond-break){
+                    @media (max-width: $mobileSecond-break) {
                         @include fonts("Poppins", 18, 600, $light-color);
                     }
                 }
             }
 
-            .kilometers{
+            .kilometers {
                 @include fonts("Poppins", 20, 400, $light-color);
-                
+
                 @media (max-width: $desk-break) {
                     @include fonts("Poppins", 15, 600, $light-color);
 
-                    @media (max-width: $mobileSecond-break){
+                    @media (max-width: $mobileSecond-break) {
                         @include fonts("Poppins", 14, 600, $light-color);
                     }
                 }

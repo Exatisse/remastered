@@ -1,15 +1,11 @@
 .discovery{
-    @include grid-initializer($column: 2, $row: 5, $title-start: 1, $title-end: 3);
+    @include grid-initializer($column: 2, $row: 5);
+    @include container;
 
-    @media (max-width: $mobile-break) {
-        grid-template-columns: 100%;
-        grid-template-rows: repeat(3, auto);
-    }
-
-    &__title{
+    &__cards-block{
         @media (max-width: $mobile-break) {
-            grid-column-start: inherit;
-            grid-column-end: inherit;
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(3, auto);
         }
     }
 
@@ -35,6 +31,7 @@
 
         .title{
             max-width: 27rem;
+
             @include fonts("Poppins", 52, 500, $light-color);
 
             @media (max-width: $desk-break) {
