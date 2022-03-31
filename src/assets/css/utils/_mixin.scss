@@ -32,6 +32,7 @@
 
 // Containers's rules
 @mixin container {
+    width: 100%;
     max-width: calc(-160px + min(1760px, 100%));
     margin: auto;
 
@@ -40,33 +41,91 @@
     }    
     
     @media (max-width: $mobile-break) {
-        max-width: calc(-50px + min(1760px, 100%));
+        max-width: calc(-40px + min(1760px, 100%));
     }
 }
 
+// Slider navigation rules
+@mixin slider-svg($direction){
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    stroke: $dark-color;
+
+    @if ($direction == "left") {
+        transform: translate(-50%, -50%) rotate(180deg);
+    } @else if ($direction == "right"){
+        transform: translate(-50%, -50%);
+    } @else{
+        @error "slider-picto() : $direction value is not a valid direction";
+    }
+}
+
+@mixin slider-item(){
+    &__item{
+        width: 32px;
+        height: 32px;
+        position: relative;
+        border: 1px solid $dark-color;
+        border-radius: 100%;
+        cursor: pointer;
+
+        // Hack to click only on span element
+        &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    
+        &--left{
+            @include slider-svg($direction: left);
+        }
+    
+        &--right{
+            @include slider-svg($direction: right);
+        }
+    }
+}
 
 // Grid rules
-@mixin grid-initializer($column, $row, $title-start, $title-end){
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat($column, 1fr);
-    grid-gap: 1.25rem;
-    @include container;
+@mixin grid-initializer($column, $row){
 
-        &__title{
-            grid-column-start: $title-start;
-            grid-column-end: $title-end;
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        .title{
             padding-bottom: 1.5rem;
             @include fonts("Poppins", 42, 500, $dark-color);
 
             @media (max-width: $desk-break) {
-                font-size: font-sz(32);
+                @include fonts("Poppins", 32, 500, $dark-color);
+
+                @media (max-width: $tabletSecond-break) {
+                    @include fonts("Poppins", 24, 500, $dark-color);
+                    padding-bottom: 1rem;
+
+                    @media (max-width: $mobileSecond-break) {
+                        @include fonts("Poppins", 21, 500, $dark-color);
+                    }
+                }
             }
         }
+    }
+        
+    &__cards-block{
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat($column, 1fr);
+        grid-gap: 1.25rem;
+    }
 
-        &__cards{
-            display: grid;
-            grid-template-rows: repeat($row, 2fr);
-            border-radius: .8rem;
-        }
+    &__cards{
+        display: grid;
+        grid-template-rows: repeat($row, 2fr);
+        border-radius: .8rem;
+    }
 }

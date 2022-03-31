@@ -17,11 +17,10 @@
         .title{
             padding-bottom: 1rem;
             @include fonts("Poppins", 52, 500, $dark-color);
-
+            
             @media (max-width: $desk-break) {
                 max-width: 19rem;
-                font-size: font-sz(38);
-                line-height: line-ht(38);
+                @include fonts("Poppins", 38, 500, $dark-color);
             }
         }
 
@@ -41,10 +40,15 @@
             justify-self: inherit;
             overflow: hidden;
             max-width: 58.8rem;
-        }
 
-        @media (max-width: $mobile-break) {
-            grid-column: inherit;
+            @media (max-width: $mobile-break) {
+                grid-column: inherit;
+                max-width: 56rem;
+
+                @media (max-width: $mobileSecond-break) {
+                    max-width: 40rem;
+                }
+            }
         }
     }
 }

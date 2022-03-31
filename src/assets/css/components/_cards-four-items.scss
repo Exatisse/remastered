@@ -1,7 +1,52 @@
-.idea{
-    @include grid-initializer($column: 4, $row: 2, $title-start: 1, $title-end: 5);
+.idea {
+    @include grid-initializer($column: 4, $row: 2);
 
-    &__cards{
+    &__cards-block{
+        width: 100%;
+        max-width: calc(-160px + min(1760px, 100%));
+        margin: auto;
+        scrollbar-width: none;
+        overflow: scroll;
+
+        @media (max-width: $tablet-break) {
+            max-width: inherit;
+            margin: inherit;
+            padding: 0 40px;
+            padding-right: 840px;
+            grid-template-columns: 37% 37% 37% 37% 60px;
+            
+            @media (max-width: $mobile-break) {
+                padding-left: 20px;
+                grid-template-columns: 56% 56% 56% 56% 20px;
+            }
+        }
+    }
+
+    &__title {
+        @include container;
+        
+        .title{
+            @media (max-width: $mobile-break) {
+                width: 74%;
+            }
+        }
+
+        .slider-nav {
+            display: none;
+
+            @media (max-width: $tablet-break) {
+                position: absolute;
+                right: 0;
+                display: flex;
+                gap: 0.6rem;
+                align-items: center;
+
+                @include slider-item();
+            }
+        }
+    }
+
+    &__cards {
         // Generate random background color from random-colors list
         @for $i from 1 through length($random-colors) {
             &:nth-child(#{length($random-colors)} n+#{$i}) {
@@ -9,27 +54,39 @@
             }
         }
 
-        .img{
+        .img {
             width: 100%;
             border-radius: .8rem .8rem 0 0;
         }
 
-        .content-bloc{
+        .content-bloc {
             padding: 1.5rem 1rem 1rem;
 
-            .city{
+            @media (max-width: $mobileSecond-break) {
+                padding: 0.6rem;
+            }
+
+            .city {
                 @include fonts("Poppins", 35, 600, $light-color);
 
                 @media (max-width: $desk-break) {
-                    font-size: font-sz(27);
+                    @include fonts("Poppins", 27, 600, $light-color);
+
+                    @media (max-width: $mobileSecond-break) {
+                        @include fonts("Poppins", 18, 600, $light-color);
+                    }
                 }
             }
 
-            .kilometers{
+            .kilometers {
                 @include fonts("Poppins", 20, 400, $light-color);
-                
+
                 @media (max-width: $desk-break) {
-                    font-size: font-sz(15);
+                    @include fonts("Poppins", 15, 600, $light-color);
+
+                    @media (max-width: $mobileSecond-break) {
+                        @include fonts("Poppins", 14, 600, $light-color);
+                    }
                 }
             }
         }
