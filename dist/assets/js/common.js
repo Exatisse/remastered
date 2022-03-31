@@ -157,10 +157,10 @@ buttonsGateway.forEach(button => {
 });
 
 // Sticky nav bar on scroll
-window.onscroll = function() {
-    const findHeader = document.querySelector('.header');
-    const findBottomNav = document.querySelector('.bottom-nav');
+const findHeader = document.querySelector('.header');
+const findBottomNav = document.querySelector('.bottom-nav');
 
+window.onscroll = function() {
     if (this.oldScroll < this.scrollY) {
         findHeader.classList.add('scroll-bar');
         findBottomNav.classList.remove('scroll');
@@ -173,20 +173,11 @@ window.onscroll = function() {
     this.oldScroll = this.scrollY;
 }
 
-const ideaSliderNav = document.querySelector(".idea .slider-nav");
-
-ideaSliderNav.addEventListener('click', (e) => {
-    const scrollDirection = e.target.attributes.name.value;
-    const scrollableBlock = document.querySelector(".idea .idea__cards-block");
-
-    if (scrollDirection === "scrollLeft") {
-        scrollableBlock.scrollLeft -= 300;
-    } else if (scrollDirection === "scrollRight") {
-        scrollableBlock.scrollLeft += 300;
-    }
-})
 
 
+
+
+// V1
 // ideaButtonleft.addEventListener('click', () => {
 //     test.scrollLeft -= 300;
 // });
@@ -194,3 +185,21 @@ ideaSliderNav.addEventListener('click', (e) => {
 // ideaButtonright.addEventListener('click', () => {
 //     test.scrollLeft += 300;
 // });
+
+
+// V2
+// const ideaSliderNav = document.querySelector(".idea .slider-nav");
+
+// ideaSliderNav.addEventListener('click', (e) => {
+//     const scrollableBlock = document.querySelector(".idea .idea__cards-block");
+    
+//     const scrollTo = (direction) => {
+//         direction = e.target.attributes.name.value;
+
+//         if (direction === "scrollLeft") {
+//             scrollableBlock.scrollLeft -= 300;
+//         } else if (direction === "scrollRight") {
+//             scrollableBlock.scrollLeft += 300;
+//         }
+//     }
+// })
