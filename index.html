@@ -115,17 +115,17 @@
         <div class="idea">
             <div class="idea__title">
                 <h2 class="title">Des idées pour votre prochain voyage</h2>
-                <div class="slider-nav">
-                    <span class="slider-nav__item" name="scrollLeft">
+                <div class="slider-nav disabledLeftNav">
+                    <span class="slider-nav__item" name="left">
                         <svg class="slider-nav__item--left" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; fill: none; height: 12px; width: 12px; stroke-width: 4px; overflow: visible;" aria-hidden="true" role="presentation" focusable="false"><g fill="none"><path d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"></path></g></svg>
                     </span>
-                    <span class="slider-nav__item" name="scrollRight">
+                    <span class="slider-nav__item" name="right">
                         <svg class="slider-nav__item--right" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; fill: none; height: 12px; width: 12px; stroke-width: 4px; overflow: visible;" aria-hidden="true" role="presentation" focusable="false"><g fill="none"><path d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"></path></g></svg>
                     </span>
                 </div>
             </div>
             
-            <div class="idea__cards-block">
+            <div class="idea__cards-block blockToSlide">
                 <div class="idea__cards">
                     <img src="https://a0.muscache.com/im/pictures/20b01752-1b6f-4390-9fc9-a2bc6f5fb643.jpg?im_w=320" alt="" class="img">
                     <div class="content-bloc">
@@ -194,17 +194,21 @@
         <div class="next-gateway">
             <h3 class="next-gateway__title">Des idées pour vos prochaines escapades</h3>
             <div class="next-gateway__content">
-                <div class="gateway-nav">
-                    <span class="gateway-nav__slider">
-                        <svg class="slider-nav__item--right" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; fill: none; stroke-width: 4px; overflow: visible;" aria-hidden="true" role="presentation" focusable="false"><g fill="none"><path d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"></path></g></svg>
+                <div class="slider-nav disabledLeftNav">
+                    <span class="slider-nav__item" name="left">
+                        <svg class="slider-nav__item--left" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; fill: none; overflow: visible;" aria-hidden="true" role="presentation" focusable="false"><g fill="none"><path d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"></path></g></svg>
                     </span>
-                    <button class="gateway-nav__item active" name="seaSide"><span>Bord de mer</span></button>
-                    <button class="gateway-nav__item" name="winterSport"><span>Sports d'hiver</span></button>
-                    <button class="gateway-nav__item" name="montain"><span>Montagne</span></button>
-                    <button class="gateway-nav__item" name="populary"><span>Autres destinations populaires</span></button>
-                    <span class="gateway-nav__slider">
-                        <svg class="slider-nav__item--right" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; fill: none; stroke-width: 4px; overflow: visible;" aria-hidden="true" role="presentation" focusable="false"><g fill="none"><path d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"></path></g></svg>
+                    <span class="slider-nav__item" name="right">
+                        <svg class="slider-nav__item--right" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; fill: none; overflow: visible;" aria-hidden="true" role="presentation" focusable="false"><g fill="none"><path d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"></path></g></svg>
                     </span>
+                </div>
+                <div class="gateway-nav blockToSlide">
+                    <div class="gateways">
+                        <button class="gateways__item active" name="seaSide"><span>Bord de mer</span></button>
+                        <button class="gateways__item" name="winterSport"><span>Sports d'hiver</span></button>
+                        <button class="gateways__item" name="montain"><span>Montagne</span></button>
+                        <button class="gateways__item" name="populary"><span>Autres destinations populaires</span></button>
+                    </div>
                 </div>
                 <div class="gateway-suggestions">
                     <a class="gateway-suggestions__link destination">

@@ -45,7 +45,7 @@
     }
 }
 
-// Slider navigation rules
+// Slider svg settings
 @mixin slider-svg($direction){
     position: absolute;
     left: 50%;
@@ -61,6 +61,7 @@
     }
 }
 
+// Slider rules
 @mixin slider-item(){
     &__item{
         width: 32px;

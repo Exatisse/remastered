@@ -10,87 +10,119 @@
     &__content{
         position: relative;
 
-        .gateway-nav{
-            display: flex;
-            min-width: 620px;
-            gap: 1rem;
-            padding: 0.4rem 0;
-            border-bottom: 1px solid $grey-light-color;
+        .slider-nav{
+            display: none;
 
             @media (max-width: $mobileSecond-break) {
-                &:before, &:after{
-                    content: "";
-                    position: absolute;
-                    z-index: 1;
-                    right: -25px;
-                    display: block;
-                    width: 40px;
-                    height: 40px;
-                    background: linear-gradient(90deg, transparent, rgb(255, 255, 255) 40%);
-                }
+                display: inherit;
+                width: 100%;
+                position: absolute;
 
-                &:before{
-                    display: none; // Rendre dynamique son apparition avec le slider
-                    left: -25px;
-                    background: linear-gradient(270deg, transparent, rgb(255, 255, 255) 40%);
-                }
-            }
-
-            &__slider{
-                display: none;
-
-                @media (max-width: $mobileSecond-break) {
-                    display: block;
-                    position: absolute;
-                    width: 16px;
-                    height: 16px; 
-                    top: 17px;
-                    z-index: 2;
-                    stroke: $dark-color;
-
-                    &:first-child{
-                        display: none; // Rendre dynamique son apparition avec le slider
-                        transform: rotate(180deg);
-                        left: -18px;
-                    }
-
-                    &:last-child{
-                        right: -18px;
-                    }
-                }
-            }
-
-            &__item{
-                border: none;
-                border-radius: 0.4rem;
-                padding: 0.5rem 0.8rem;
-                margin-left: -0.8rem;
-                @include fonts("Poppins", 14, 500, $grey-color);
-
-                &.active{
-                    span{
-                        color: $dark-color;
-                        position: relative;
-                        
-                        &:after {
-                            content: "";
-                            display: inline-block;
-                            position: absolute;
-                            top: 2.04rem;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            width: 100%;
-                            border-bottom: .16rem solid $dark-color;
-                            border-radius: 1rem;
+                &.disabledLeftNav{
+                    .slider-nav__item{
+                        &:first-child{
+                            display: none;
                         }
                     }
                 }
-
-                &:hover{
-                    background-color: $grey-light-color;
+    
+                &__item{
+                    width: 48px;
+                    height: 50px;
+                    background: linear-gradient(90deg, transparent, rgba(255,255,255,1) 20%);
+                    position: absolute;
+                    right: -20px;
+                    cursor: pointer;
+                    z-index: 1;
+    
+                    &:after{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 3;
+                    }
+                    
+                    &:first-child{
+                        background: linear-gradient(90deg, rgba(255,255,255,1) 80%, transparent);
+                        left: -20px;
+                    }
+    
+                    &--left, &--right{
+                        width: 18px;
+                        height: 18px;
+                        position: absolute;
+                        top: 14px;
+                        stroke-width: 3px;
+                        stroke: $dark-color;
+                        z-index: 2;
+                    }
+                
+                    &--left{
+                        transform: rotate(180deg);
+                        left: 1rem;
+                    }
+                
+                    &--right{
+                        right: 1rem;
+                    }
                 }
             }
         }
+
+        .gateway-nav{
+            @media (max-width: $mobile-break){
+                overflow: scroll;
+                scrollbar-width: none;
+            }
+    
+            .gateways{
+                display: flex;
+                width: 100%;
+                min-width: 590px;
+                gap: 1rem;
+                padding: 0.4rem 0;
+                border-bottom: 1px solid $grey-light-color;
+    
+                &__item{
+                    border: none;
+                    border-radius: 0.4rem;
+                    padding: 0.5rem 0.8rem;
+                    margin-left: -0.8rem;
+                    cursor: pointer;
+                    @include fonts("Poppins", 14, 500, $grey-color);
+    
+                    &.active{
+                        span{
+                            color: $dark-color;
+                            position: relative;
+                            
+                            &:after {
+                                content: "";
+                                display: inline-block;
+                                position: absolute;
+                                top: 2.04rem;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 100%;
+                                border-bottom: .16rem solid $dark-color;
+                                border-radius: 1rem;
+                            }
+                        }
+                    }
+
+                    &:hover{
+                        background-color: $grey-light-color;
+
+                        @media (max-width: $mobile-break){
+                            background-color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+
 
         .gateway-suggestions{
             display: grid;
