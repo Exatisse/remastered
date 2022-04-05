@@ -1,8 +1,5 @@
 # remastered
 
 TODO
-  - Optmize mobile screen
-    - Create slider
-
-  - Add some random animations
+  - Add some animations
   - Add transitions 
