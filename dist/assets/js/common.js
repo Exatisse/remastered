@@ -134,12 +134,12 @@ for (let i = 0; i < findButton.length; i++) {
 */
 
 // Find gateway navigation items
-const buttonsGateway = document.querySelectorAll('.gateway-nav__item');
+const buttonsGateway = document.querySelectorAll('.gateways__item');
 
 buttonsGateway.forEach(button => {
     button.addEventListener('click', (e) => {
         // Deleting and add active class
-        document.querySelector('.gateway-nav .active').classList.remove('active');
+        document.querySelector('.gateways .active').classList.remove('active');
         e.currentTarget.classList.add('active');
         
         // Find all destinations
@@ -173,8 +173,64 @@ window.onscroll = function() {
     this.oldScroll = this.scrollY;
 }
 
+// Find 
+const sliders = document.querySelectorAll('.slider-nav');
+
+// Finding if user scroll on left or right then indent scroll data
+const scrollTo = (block, direction) => {
+    
+    const scrollGap = (scrollWidth) =>{
+        scrollWidth = block.scrollWidth;
+
+        if (block.scrollWidth > 600){
+            scrollWidth = (document.body.clientWidth / block.childElementCount) * 2;
+        } else{
+            scrollWidth = (document.body.clientWidth / block.childElementCount) * 0.40;
+        }
+
+        return scrollWidth
+    }
+
+    
+    if (direction === "left") {
+        block.scrollLeft -= scrollGap();
+    } else if (direction === "right") {
+        block.scrollLeft += scrollGap();
+    }
+}
+
+// Scrolling depends on block 
+const sliderScroll = (parent, direction) => {
+    const blockToSlide = parent.querySelector('.blockToSlide');
+
+    if (parent.className === "idea") {
+        scrollTo(blockToSlide, direction);
+    } else if (parent.className === "next-gateway") {
+        scrollTo(blockToSlide, direction);
+    }
+}
 
 
+// Listeners for each slider 
+sliders.forEach(element => {
+    const sliderParent = element.parentElement.parentElement;
+    const blockToSlide = sliderParent.querySelector('.blockToSlide');
+
+    element.addEventListener('click', (e) => {
+        const direction = e.target.attributes.name.value;
+        sliderScroll(sliderParent, direction);
+    })
+
+    blockToSlide.addEventListener('scroll', (e) => {
+        const scrollPosition = e.target.scrollLeft;
+
+        sliderParent.querySelector('.slider-nav').classList.remove('disabledLeftNav');
+
+        if (scrollPosition === 0) {
+            sliderParent.querySelector('.slider-nav').classList.add('disabledLeftNav');
+        }
+    })
+});
 
 
 // V1

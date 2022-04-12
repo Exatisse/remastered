@@ -42,6 +42,15 @@
                 align-items: center;
 
                 @include slider-item();
+
+                &.disabledLeftNav {
+                    .slider-nav__item{
+                        &:first-child{
+                            cursor: default;
+                            opacity: 0.24;
+                        }
+                    }
+                }
             }
         }
     }
